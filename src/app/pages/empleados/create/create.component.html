@@ -1,0 +1,34 @@
+<h2>Agregar Nuevo Empleado</h2>
+
+<form (submit)="agregar($event)">
+    <div class="form-group">
+        <label for="numeroEmpleado">Número de Empleado</label>
+        <input type="text" class="form-control" name="numeroEmpleado" [(ngModel)]="nuevoEmpleado.numeroEmpleado" required>
+    </div>
+    <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <input type="text" class="form-control" name="nombre" [(ngModel)]="nuevoEmpleado.nombre" required>
+    </div>
+    <div class="form-group">
+        <label for="correo">Correo</label>
+        <input type="email" class="form-control" name="correo" [(ngModel)]="nuevoEmpleado.correo" required>
+    </div>
+    <div class="form-group">
+        <label for="telefono">Teléfono</label>
+        <input type="text" class="form-control" name="telefono" [(ngModel)]="nuevoEmpleado.telefono" required>
+    </div>
+    <div class="form-group">
+        <label for="fechaNacimiento">Fecha de Nacimiento</label>
+        <input type="date" class="form-control" name="fechaNacimiento" [(ngModel)]="nuevoEmpleado.fechaNacimiento" required>
+    </div>
+    <div class="form-group">
+        <label for="sexo">Sexo</label>
+        <select class="form-control" name="sexo" [(ngModel)]="nuevoEmpleado.sexo" required>
+            <option value="Masculino">Masculino</option>
+            <option value="Femenino">Femenino</option>
+            <option value="Otro">Otro</option>
+        </select>
+    </div>
+    
+    <button type="submit" class="btn btn-success">Agregar Empleado</button>
+</form>

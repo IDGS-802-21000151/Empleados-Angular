@@ -1,0 +1,36 @@
+<div class="d-flex justify-content-between">
+    <h2>Clientes</h2>
+
+    <button class="btn btn-success" (click)="redirigirAgregarEmpleado()">Nuevo cliente</button>
+</div>
+
+<hr />
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Número empleado</th>
+            <th>Nombre</th>
+            <th>Correo</th>
+            <th>Télefono</th>
+            <th>Fecha nacimiento</th>
+            <th>Sexo</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let empleado of _empleados; let i = index">
+            <td>{{ empleado.numeroEmpleado }}</td>
+            <td>{{ empleado.nombre }}</td>
+            <td>{{ empleado.correo }}</td>
+            <td>{{ empleado.telefono }}</td>
+            <td>{{ empleado.fechaNacimiento | date:'dd/MM/yyyy' }}</td>
+            <td>{{ empleado.sexo }}</td>
+            <td class="d-flex gap-3">
+                <button class="btn btn-warning" (click)="redirigirEditarEmpleado(i)">Editar</button>
+                <button class="btn btn-danger" (click)="eliminarEmpleado(i)">Eliminar</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
